@@ -1,0 +1,1075 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dublin — A Weekend Away</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #f4ede0;
+    --cream-deep: #e8dfc9;
+    --paper: #fbf7ee;
+    --ink: #1a2418;
+    --ink-soft: #3a4a36;
+    --ink-faded: #6b7a63;
+    --moss: #3d5c34;
+    --moss-deep: #2a3e24;
+    --gold: #b8862b;
+    --amber: #a86420;
+    --line: #d4cdb5;
+    --line-soft: #e4dcc4;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 17px;
+    line-height: 1.65;
+    color: var(--ink);
+    background: var(--cream);
+    background-image:
+      radial-gradient(ellipse at top, rgba(184, 134, 43, 0.05) 0%, transparent 60%),
+      radial-gradient(ellipse at bottom, rgba(61, 92, 52, 0.04) 0%, transparent 60%);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.4;
+    z-index: 1;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.3 0 0 0 0 0.3 0 0 0 0 0.2 0 0 0 0.06 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  .container {
+    max-width: 920px;
+    margin: 0 auto;
+    padding: 0 32px;
+    position: relative;
+    z-index: 2;
+  }
+
+  /* HERO */
+  header.hero {
+    padding: 90px 0 70px;
+    text-align: center;
+    border-bottom: 1px solid var(--line);
+    position: relative;
+  }
+
+  .kicker {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--moss);
+    margin-bottom: 28px;
+  }
+
+  h1.title {
+    font-family: 'Fraunces', serif;
+    font-weight: 300;
+    font-size: clamp(72px, 12vw, 140px);
+    line-height: 0.9;
+    letter-spacing: -0.03em;
+    font-variation-settings: "opsz" 144, "SOFT" 50;
+  }
+
+  h1.title em {
+    font-style: italic;
+    font-weight: 400;
+    color: var(--moss);
+  }
+
+  .subtitle {
+    font-family: 'Fraunces', serif;
+    font-weight: 300;
+    font-style: italic;
+    font-size: 22px;
+    color: var(--ink-soft);
+    margin-top: 24px;
+    letter-spacing: 0.01em;
+  }
+
+  .route {
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+    flex-wrap: wrap;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.15em;
+    color: var(--ink-soft);
+    padding-top: 28px;
+    border-top: 1px solid var(--line);
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .route-item {
+    text-align: center;
+  }
+  .route-item .val {
+    display: block;
+    font-family: 'Fraunces', serif;
+    font-weight: 400;
+    font-size: 20px;
+    color: var(--ink);
+    letter-spacing: 0;
+    margin-top: 4px;
+    font-style: italic;
+  }
+
+  /* NAV */
+  nav.toc {
+    position: sticky;
+    top: 0;
+    border-bottom: 1px solid var(--line);
+    padding: 14px 0;
+    z-index: 10;
+    backdrop-filter: blur(8px);
+    background: rgba(244, 237, 224, 0.92);
+  }
+  nav.toc .container {
+    display: flex;
+    gap: 32px;
+    justify-content: center;
+    flex-wrap: wrap;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+  nav.toc a {
+    color: var(--ink-soft);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    padding-bottom: 2px;
+    transition: all 0.2s;
+  }
+  nav.toc a:hover {
+    color: var(--moss);
+    border-bottom-color: var(--moss);
+  }
+
+  /* SECTIONS */
+  section {
+    padding: 80px 0 40px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .section-mark {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 18px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .section-mark::before {
+    content: '';
+    width: 28px;
+    height: 1px;
+    background: var(--gold);
+  }
+
+  h2.section-title {
+    font-family: 'Fraunces', serif;
+    font-weight: 400;
+    font-size: clamp(40px, 6vw, 64px);
+    line-height: 1;
+    letter-spacing: -0.02em;
+    margin-bottom: 12px;
+    font-variation-settings: "opsz" 144;
+  }
+  h2.section-title em {
+    font-style: italic;
+    color: var(--moss);
+  }
+
+  .section-meta {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    color: var(--ink-faded);
+    text-transform: uppercase;
+    margin-bottom: 36px;
+  }
+
+  .lede {
+    font-family: 'Fraunces', serif;
+    font-size: 22px;
+    font-weight: 300;
+    line-height: 1.5;
+    color: var(--ink-soft);
+    margin-bottom: 48px;
+    max-width: 680px;
+    font-variation-settings: "opsz" 90;
+  }
+
+  /* DAY BLOCKS */
+  .day {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    gap: 36px;
+    margin-bottom: 60px;
+    padding-top: 28px;
+    border-top: 1px dashed var(--line);
+  }
+
+  .day:first-of-type { border-top: none; padding-top: 0; }
+
+  .day-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--ink-faded);
+    padding-top: 4px;
+  }
+
+  .day-label .num {
+    font-family: 'Fraunces', serif;
+    font-weight: 300;
+    font-size: 64px;
+    color: var(--moss);
+    line-height: 1;
+    display: block;
+    letter-spacing: -0.03em;
+    margin-bottom: 6px;
+    font-variation-settings: "opsz" 144;
+    font-style: italic;
+  }
+
+  .day-title {
+    font-family: 'Fraunces', serif;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 1.15;
+    margin-bottom: 8px;
+    letter-spacing: -0.015em;
+  }
+  .day-title em { font-style: italic; color: var(--moss); }
+
+  .day-narrative {
+    color: var(--ink-soft);
+    font-style: italic;
+    margin-bottom: 28px;
+    font-size: 16px;
+    max-width: 600px;
+  }
+
+  /* STOPS */
+  .stop {
+    margin-bottom: 24px;
+    padding-left: 24px;
+    border-left: 2px solid var(--line);
+    position: relative;
+  }
+  .stop::before {
+    content: '';
+    width: 9px;
+    height: 9px;
+    background: var(--moss);
+    border-radius: 50%;
+    position: absolute;
+    left: -5.5px;
+    top: 8px;
+  }
+
+  .stop-head {
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+    margin-bottom: 6px;
+    flex-wrap: wrap;
+  }
+
+  .stop-time {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--amber);
+    letter-spacing: 0.05em;
+    font-weight: 500;
+  }
+
+  .stop-name {
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-size: 19px;
+    color: var(--ink);
+    letter-spacing: -0.005em;
+  }
+
+  .stop-note {
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--ink-soft);
+  }
+
+  /* CALLOUT */
+  .callout {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    padding: 34px 38px;
+    margin: 40px 0;
+    position: relative;
+  }
+  .callout::before {
+    content: '';
+    position: absolute;
+    top: -1px; left: -1px;
+    width: 26px; height: 26px;
+    border-top: 2px solid var(--moss);
+    border-left: 2px solid var(--moss);
+  }
+  .callout::after {
+    content: '';
+    position: absolute;
+    bottom: -1px; right: -1px;
+    width: 26px; height: 26px;
+    border-bottom: 2px solid var(--moss);
+    border-right: 2px solid var(--moss);
+  }
+  .callout-title {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--moss);
+    margin-bottom: 16px;
+  }
+  .callout h3 {
+    font-family: 'Fraunces', serif;
+    font-weight: 400;
+    font-size: 24px;
+    margin-bottom: 18px;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+  }
+  .callout p { margin-bottom: 12px; color: var(--ink-soft); }
+  .callout p:last-child { margin-bottom: 0; }
+
+  /* BOOKING TABLE */
+  .booking-list {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 0;
+    margin-top: 12px;
+  }
+  .booking-list .row {
+    display: contents;
+  }
+  .booking-list .row > * {
+    padding: 14px 0;
+    border-bottom: 1px dashed var(--line);
+  }
+  .booking-list .row:last-child > * { border-bottom: none; }
+  .booking-list .num {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 20px;
+    color: var(--moss);
+    padding-right: 20px;
+    font-weight: 400;
+  }
+  .booking-list .what {
+    font-family: 'Fraunces', serif;
+    font-size: 17px;
+    color: var(--ink);
+    font-weight: 500;
+  }
+  .booking-list .what small {
+    display: block;
+    font-family: 'Source Serif 4', serif;
+    font-weight: 400;
+    font-size: 13px;
+    color: var(--ink-faded);
+    margin-top: 2px;
+    font-style: italic;
+  }
+  .booking-list .when {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--amber);
+    text-align: right;
+    padding-left: 20px;
+    letter-spacing: 0.05em;
+    padding-top: 18px;
+  }
+
+  /* KNOW BEFORE */
+  .know {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    margin-top: 32px;
+  }
+  .know-item {
+    padding: 22px 24px;
+    background: var(--paper);
+    border-left: 2px solid var(--moss);
+  }
+  .know-title {
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-size: 17px;
+    margin-bottom: 6px;
+    letter-spacing: -0.005em;
+  }
+  .know-item p { font-size: 14px; color: var(--ink-soft); line-height: 1.55; }
+
+  /* RESTAURANT / PUB LIST */
+  .venue-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    margin-top: 32px;
+    border: 1px solid var(--line);
+  }
+
+  .venue {
+    padding: 24px 28px;
+    border-right: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+  .venue:nth-child(even) { border-right: none; }
+
+  .venue-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 8px;
+  }
+  .venue-name {
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-size: 20px;
+    margin-bottom: 4px;
+    line-height: 1.2;
+    letter-spacing: -0.005em;
+  }
+  .venue-name em { font-style: italic; color: var(--moss); font-weight: 400; }
+  .venue-desc {
+    font-size: 14px;
+    color: var(--ink-soft);
+    line-height: 1.55;
+  }
+
+  /* SECTION HEADING (smaller) */
+  h3.subhead {
+    font-family: 'Fraunces', serif;
+    font-weight: 400;
+    font-size: 26px;
+    margin-top: 56px;
+    margin-bottom: 4px;
+    letter-spacing: -0.015em;
+    font-style: italic;
+    color: var(--moss);
+  }
+  .subhead-note {
+    color: var(--ink-faded);
+    font-size: 14px;
+    margin-bottom: 0;
+    letter-spacing: 0.02em;
+  }
+
+  /* FOOTER */
+  footer {
+    padding: 70px 0 90px;
+    text-align: center;
+    color: var(--ink-faded);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+  footer .ornament {
+    font-family: 'Fraunces', serif;
+    font-size: 28px;
+    color: var(--moss);
+    margin-bottom: 18px;
+    font-style: italic;
+    letter-spacing: -0.01em;
+    font-weight: 400;
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 720px) {
+    .container { padding: 0 22px; }
+    .day { grid-template-columns: 1fr; gap: 14px; }
+    .day-label { display: flex; align-items: baseline; gap: 14px; }
+    .day-label .num { font-size: 40px; margin-bottom: 0; }
+    .venue-grid { grid-template-columns: 1fr; }
+    .venue { border-right: none; }
+    .know { grid-template-columns: 1fr; }
+    .booking-list { grid-template-columns: auto 1fr; }
+    .booking-list .when { grid-column: 2; padding-left: 0; padding-top: 0; padding-bottom: 14px; text-align: left; }
+    nav.toc .container { gap: 16px; font-size: 10px; }
+    .route { gap: 20px; }
+  }
+
+  /* PRINT */
+  @media print {
+    body { background: white; font-size: 11pt; }
+    body::before { display: none; }
+    nav.toc { display: none; }
+    section { page-break-inside: avoid; padding: 24pt 0; }
+    .day { page-break-inside: avoid; }
+    .callout { page-break-inside: avoid; }
+    a { color: inherit; text-decoration: none; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="container">
+    <div class="kicker">A Weekend in Ireland · 3 Nights · Fall</div>
+    <h1 class="title"><em>Dublin</em></h1>
+    <p class="subtitle">Three couples · One long weekend · Pubs, cliffs &amp; a pint at the top</p>
+    <div class="route">
+      <div class="route-item">
+        Arrive<br><span class="val">Fri · 8:30 AM</span>
+      </div>
+      <div class="route-item">
+        Hotel<br><span class="val">Wynn's</span>
+      </div>
+      <div class="route-item">
+        Depart<br><span class="val">Mon · 10:00 AM</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<nav class="toc">
+  <div class="container">
+    <a href="#bookings">Bookings</a>
+    <a href="#know">Know Before You Go</a>
+    <a href="#friday">Friday</a>
+    <a href="#saturday">Saturday</a>
+    <a href="#sunday">Sunday · Howth</a>
+    <a href="#monday">Depart</a>
+    <a href="#extras">Restaurants &amp; Pubs</a>
+  </div>
+</nav>
+
+<!-- ========== BOOKINGS ========== -->
+<section id="bookings">
+  <div class="container">
+    <div class="section-mark">Chapter I</div>
+    <h2 class="section-title">Book <em>from home</em></h2>
+    <p class="section-meta">In order of urgency · Reserve before you fly</p>
+
+    <p class="lede">Most of the friction on this trip can be eliminated from your couch. Same-day tickets to the marquee spots are routinely sold out in fall. Book everything below before you leave — and note that Kilmainham Gaol is booked out for our dates, so we're swapping in the GPO Witness History museum for the same 1916/independence story.</p>
+
+    <div class="callout">
+      <div class="callout-title">✎ The list</div>
+      <div class="booking-list">
+        <div class="row">
+          <div class="num">i.</div>
+          <div class="what">Trinity Book of Kells<small>tcd.ie/visitors/book-of-kells</small></div>
+          <div class="when">Sat · 9:30 AM</div>
+        </div>
+        <div class="row">
+          <div class="num">ii.</div>
+          <div class="what">Guinness Storehouse<small>guinness-storehouse.com · pick a specific slot</small></div>
+          <div class="when">Sat · 2:30 PM</div>
+        </div>
+        <div class="row">
+          <div class="num">iii.</div>
+          <div class="what">The Vintage Kitchen<small>Tiny · books up fast · request 6 seats specifically</small></div>
+          <div class="when">Sat · 8:30 PM</div>
+        </div>
+        <div class="row">
+          <div class="num">iv.</div>
+          <div class="what">GPO Witness History<small>gpowitnesshistory.ie · 1916 Rising museum · walk up, no booking needed but you can pre-book</small></div>
+          <div class="when">Fri · 3:00 PM</div>
+        </div>
+        <div class="row">
+          <div class="num">v.</div>
+          <div class="what">The Winding Stair<small>Cozy Irish across Ha'penny Bridge from Wynn's</small></div>
+          <div class="when">Fri · 7:00 PM</div>
+        </div>
+        <div class="row">
+          <div class="num">vi.</div>
+          <div class="what">Howth Castle guided tour ✓<small>Already booked</small></div>
+          <div class="when">Sun · 1:00 PM</div>
+        </div>
+      </div>
+    </div>
+
+    <p style="color: var(--ink-faded); font-size: 14px; margin-top: 8px; font-style: italic;">Howth harbour restaurants generally take walk-ins on Sunday. Call ahead for Aqua if you want the pier view — a party of six is easier to accommodate with notice.</p>
+
+    <p style="color: var(--ink-faded); font-size: 14px; margin-top: 12px; font-style: italic;">Kilmainham cancellation trick: fresh tickets are released every Monday at 9:15 AM Irish time. Worth a shot in the weeks before we fly — if we snag them, we can flip Saturday afternoon back.</p>
+  </div>
+</section>
+
+<!-- ========== KNOW BEFORE ========== -->
+<section id="know">
+  <div class="container">
+    <div class="section-mark">Chapter II</div>
+    <h2 class="section-title">Know before <em>you go</em></h2>
+    <p class="section-meta">Practical notes · Weather · Getting around</p>
+
+    <p class="lede">Dublin is small, walkable, and forgiving. A few things worth sorting before you land.</p>
+
+    <div class="know">
+      <div class="know-item">
+        <div class="know-title">Waterproof layers, real shoes</div>
+        <p>Fall = wind and drizzle, especially at Howth on the cliffs. A windbreaker won't cut it — bring something genuinely waterproof, plus shoes broken in for lots of walking.</p>
+      </div>
+      <div class="know-item">
+        <div class="know-title">Grab a Leap Card</div>
+        <p>Available at any DART/bus station or the airport, ~€5 refundable deposit. Makes buses, DART, and Luas one-tap. Essential for the Sunday Howth trip.</p>
+      </div>
+      <div class="know-item">
+        <div class="know-title">Cash is optional</div>
+        <p>Contactless (Apple/Google Pay, tap-to-pay) works everywhere — pubs, cabs, buses, corner shops. A little cash for tips is nice but you don't need to hit an ATM.</p>
+      </div>
+      <div class="know-item">
+        <div class="know-title">Tipping is casual</div>
+        <p>10% at sit-down restaurants if service was good. Rounding up in pubs and cabs is fine. Nobody expects US-style tipping.</p>
+      </div>
+      <div class="know-item">
+        <div class="know-title">Airport to Wynn's</div>
+        <p>Taxi is easiest with six people and luggage (~€25–30 total, 30 min). The Airlink 747 bus stops at Connolly Station right next to the hotel, €7 pp, 30 min, every 15 minutes.</p>
+      </div>
+      <div class="know-item">
+        <div class="know-title">Wynn's location is a superpower</div>
+        <p>Lower Abbey Street. 8-min walk to Trinity, 3-min walk to Connolly Station for the Sunday DART to Howth. Almost everything on this itinerary is walkable from the hotel.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== FRIDAY ========== -->
+<section id="friday">
+  <div class="container">
+    <div class="section-mark">Chapter III · Day One</div>
+    <h2 class="section-title"><em>Friday</em> · arrival</h2>
+    <p class="section-meta">Land 8:30 AM · Ease in · 1916 history in the afternoon</p>
+
+    <p class="lede">The trick with jet lag is daylight and motion. Don't sit down in a dark museum for too long — you'll fall asleep. Coffee, walk, one strict nap (30 min, two alarms), the GPO museum at 3, hearty dinner, one pub, bed by 10:30.</p>
+
+    <div class="day">
+      <div class="day-label"><span class="num">Fri</span>Arrival</div>
+      <div class="day-content">
+        <h3 class="day-title">Foggy morning, <em>1916 stories</em></h3>
+        <p class="day-narrative">A low-pressure day. The GPO Witness History museum in the afternoon is a great jet-lag activity — self-paced, engaging without demanding sharp attention, and it puts the whole Easter Rising story in your head before we see Dublin proper on Saturday.</p>
+
+        <div class="stop">
+          <div class="stop-head">
+            <span class="stop-time">~10:00 AM</span>
+            <span class="stop-name">Arrive at Wynn's · drop bags</span>
+          </div>
+          <p class="stop-note">Reception will hold your bags until check-in (standard everywhere). Don't try to check in until mid-afternoon — rooms rarely ready before then. Taxi from the airport is easiest for a group with luggage.</p>
+        </div>
+
+        <div class="stop">
+          <div class="stop-head">
+            <span class="stop-time">10:30 AM</span>
+            <span class="stop-name">Real breakfast at a proper café</span>
+          </div>
+          <p class="stop-note">Not the airport. Options: <strong>Bewley's on Grafton Street</strong> (Dublin institution, atmospheric), <strong>Meet Me in the Morning</strong> on Pleasants Street (best coffee in the neighborhood), or <strong>Brother Hubbard</strong> on Capel Street (hearty, close to Wynn's). Sit for an hour.</p>
+        </div>
+
+        <div class="stop">
+          <div class="stop-head">
+            <span class="stop-time">Noon</span>
+            <span class="stop-name">Easy walk · Grafton, Stephen's Green, Trinity grounds</span>
+          </div>
+          <p class="stop-note">Cross O'Connell Bridge, wander down Grafton Street, sit in St. Stephen's Green. You can walk Trinity's campus free without a ticket — save Book of Kells for Saturday. Duck into the <strong>Iveagh Gardens</strong> behind Stephen's Green — hidden and gorgeous.</p>
+        </div>
+
+        <div class="stop">
+          <div class="stop-head">
+            <span class="stop-time">1:00 PM</span>
+            <span class="stop-name">Light lunch</span>
+          </div>
+          <p class="stop-note">Soup and bread at <strong>Fumbally</strong>, sandwiches at <strong>Meet Me in the Morning</strong>, or a bakery bite at <strong>Bread 41</strong>. Nothing heavy — you'll want to nap.</p>
+        </div>
+
+        <div class="stop">
+          <div class="stop-head">
+            <span class="stop-time">2:30 PM</span>
+            <span class="stop-name">Check in · shower · strict 30-min nap (optional)</span>
+          </div>
+          <p class="stop-note">Set two alarms. Longer than 30 minutes and you're wrecked for the rest of the day.</p>
+        </div>
+
+        <div class="stop">
+          <div class="stop-head">
+            <span class="stop-time">3:00 PM · ~2 hrs</span>
+            <span class="stop-name">GPO Witness History · O'Connell Street</span>
+          </div>
+          <p class="stop-note">5-min walk from Wynn's. Excellent museum inside the working General Post Office — the actual headquarters of the 1916 Easter Rising. Bullet holes still visible in the columns outside. Covers the Rising, the executions, the road to independence. Immersive, moving, and the perfect substitute for Kilmainham. Roughly €15, plan ~90 min to 2 hrs. Afterward, walk 10 minutes to the <strong>Garden of Remembrance</strong> for a quiet moment.</p>
+        </div>
+
+        <div class="stop">
+          <div class="stop-head">
+            <span class="stop-time">7:00 PM</span>
+            <span class="stop-name">The Winding Stair · dinner</span>
+          </div>
+          <p class="stop-note">4-min walk across Ha'penny Bridge from Wynn's. Cozy Irish restaurant upstairs above a bookshop, Liffey views, hearty comfort food. Perfect Friday spot — atmospheric but not overwhelming.</p>
+        </div>
+
+        <div class="stop">
+          <div class="stop-head">
+            <span class="stop-time">9:00 PM</span>
+            <span class="stop-name">O'Donoghues · trad music &amp; one pint</span>
+          </div>
+          <p class="stop-note">15-min walk or 8-min taxi to Merrion Row. Save the Cobblestone for Saturday when you have energy. If you're truly wiped, <strong>The Palace Bar</strong> on Fleet Street (8 min away, Victorian atmosphere) or <strong>Mulligan's</strong> on Poolbeg Street (10 min, arguably the best-poured Guinness in the city) are excellent closer alternatives.</p>
+        </div>
+
+        <div class="stop">
+          <div class="stop-head">
+            <span class="stop-time">10:30 PM</span>
+            <span class="stop-name">Back to Wynn's · sleep hard</span>
+          </div>
+          <p class="stop-note">Resist the urge to push later. Tomorrow is the heavy day.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== SATURDAY ========== -->
+<section id="saturday">
+  <div class="container">
+    <div class="section-mark">Chapter IV · Day Two</div>
+    <h2 class="section-title"><em>Saturday</em> · the big day</h2>
+    <p class="section-meta">Trinity 9:30 AM · Guinness 2:30 PM · Vintage Kitchen 8:30 PM · Cobblestone late</p>
+
+    <p class="lede">The heavy hitter. Ancient books in the morning, a brewery pilgrimage in the afternoon, the best dinner and the best pub of the trip at night. Pace yourself — this is a full day.</p>
+
+    <div class="day">
+      <div class="day-label"><span class="num">Sat</span>City Day</div>
+      <div class="day-content">
+        <h3 class="day-title">Book of Kells, <em>a brewery, a feast</em></h3>
+        <p class="day-narrative">Trinity in the morning while everyone's fresh, an early lunch, Guinness in the afternoon (the tour is self-guided so no schedule pressure), a rest, then dinner and music. Wear good shoes.</p>
+
+        <div class="stop">
+          <div class="stop-head">
+            <span class="stop-time">9:30 AM · 90 min</span>
+            <span class="stop-name">Trinity College &amp; the Book of Kells</span>
+          </div>
+          <p class="stop-note">8-min walk from Wynn's down O'Connell Street and across the bridge. The <strong>Long Room</strong> library is the money shot — 200,000 old books on floor-to-ceiling shelves. Get there right at your slot; mid-morning gets crushed by tour groups.</p>
+        </div>
+
+        <div class="stop">
+          <div class="stop-head">
+            <span class="stop-time">11:30 AM</span>
+            <span class="stop-name">Coffee &amp; a wander</span>
+          </div>
+          <p class="stop-note">Coffee at <strong>Kaph</strong> or <strong>3fe</strong> nearby. If the weather holds, walk to <strong>Merrion Square</strong> to see the Oscar Wilde statue and the famous Georgian doors.</p>
+        </div>
+
+        <div class="stop">
+          <div class="stop-head">
+            <span class="stop-time">12:30 PM</span>
+            <span class="stop-name">Lunch · pick one</span>
+          </div>
+          <p class="stop-note"><strong>Bunsen</strong> (best burger in Dublin, tiny menu, fast in-and-out — good for keeping the group on schedule) · <strong>The Woollen Mills</strong> (traditional Irish, near Ha'penny Bridge, more seating for six) · <strong>Klaw</strong> (casual seafood, killer crab claws).</p>
+        </div>
+
+        <div class="stop">
+          <div class="stop-head">
+            <span class="stop-time">2:30 PM · 2.5 hrs</span>
+            <span class="stop-name">Guinness Storehouse</span>
+          </div>
+          <p class="stop-note">10-min taxi (or two taxis for six) from lunch. Seven floors of brewing history, all self-guided so no pressure to keep pace with a tour. The tasting experience halfway up is fun, and it ends at the <strong>Gravity Bar</strong> on the top floor with 360° city views and your included pint. Book a specific entry slot online — mid-afternoon is the sweet spot after morning tour groups clear out.</p>
+        </div>
+
+        <div class="stop">
+          <div class="stop-head">
+            <span class="stop-time">5:30 PM</span>
+            <span class="stop-name">Back to Wynn's · rest &amp; freshen up</span>
+          </div>
+          <p class="stop-note">Long taxi ride back or hop the Luas red line from James's stop. Nap, shower, change. You've got time before dinner.</p>
+        </div>
+
+        <div class="stop">
+          <div class="stop-head">
+            <span class="stop-time">8:30 PM</span>
+            <span class="stop-name">The Vintage Kitchen · dinner ✓</span>
+          </div>
+          <p class="stop-note">5-min walk from Wynn's across the river on Poolbeg Street. Small, intimate, modern Irish — mismatched vintage china, no website charm, exceptional value for the quality. The chef is often out saying hello. A special night out. Meet in the Wynn's lobby around 8:15 for the short walk over.</p>
+        </div>
+
+        <div class="stop">
+          <div class="stop-head">
+            <span class="stop-time">10:45 PM</span>
+            <span class="stop-name">The Cobblestone · Smithfield</span>
+          </div>
+          <p class="stop-note">Post-dinner, taxi over (~8 min). The trad music pub locals swear by — musicians are friends jamming, not performers. Sessions run late; you'll walk in mid-flow. No food, just pints and music. If it's too packed, <strong>The Piper's Corner</strong> and <strong>Hughes' Bar</strong> nearby are excellent alternatives with the same energy.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== SUNDAY ========== -->
+<section id="sunday">
+  <div class="container">
+    <div class="section-mark">Chapter V · Day Three</div>
+    <h2 class="section-title"><em>Sunday</em> · Howth</h2>
+    <p class="section-meta">DART to the coast · Castle tour · Cliff walk · Seafood</p>
+
+    <p class="lede">Wynn's superpower: 3-minute walk to Connolly Station for the DART to Howth. Leave the city behind, breathe sea air, tour a castle, walk cliffs, eat fish that was in the water this morning.</p>
+
+    <div class="day">
+      <div class="day-label"><span class="num">Sun</span>Howth</div>
+      <div class="day-content">
+        <h3 class="day-title">Coast day · <em>cliffs &amp; seafood</em></h3>
+        <p class="day-narrative">The tour is booked for 1 PM, so the day builds toward it. Morning: wander the village and harbour. Afternoon: castle, then the famous cliff walk. Evening: a proper seafood dinner at the pier.</p>
+
+        <div class="stop">
+          <div class="stop-head">
+            <span class="stop-time">8:30 AM</span>
+            <span class="stop-name">Breakfast at Wynn's or nearby café</span>
+          </div>
+          <p class="stop-note">Fuel up. You'll be outside most of the day.</p>
+        </div>
+
+        <div class="stop">
+          <div class="stop-head">
+            <span class="stop-time">10:00 AM</span>
+            <span class="stop-name">DART from Connolly Station</span>
+          </div>
+          <p class="stop-note">3-min walk from Wynn's. Tap on with your Leap Card, ~€3.50 each way. Trains every 15–20 min. <strong>Sit on the right side</strong> heading out — sea views for the last 10 minutes are worth it.</p>
+        </div>
+
+        <div class="stop">
+          <div class="stop-head">
+            <span class="stop-time">10:30 AM</span>
+            <span class="stop-name">Arrive Howth · wander the harbour</span>
+          </div>
+          <p class="stop-note">Two hours before the castle tour. Walk the harbour, poke through the <strong>Howth Sunday Market</strong> (best day for it — food, crafts, local vendors). Grab coffee and a pastry at <strong>The Pier</strong>, <strong>Beshoff Bros</strong>, or <strong>Country Bake</strong>.</p>
+        </div>
+
+        <div class="stop">
+          <div class="stop-head">
+            <span class="stop-time">11:30 AM · 30 min</span>
+            <span class="stop-name">Short warmup · East Pier walk (optional)</span>
+          </div>
+          <p class="stop-note">Easy 30-min out-and-back to the lighthouse. Great sea views, low effort. Just enough to get the legs moving before the castle tour.</p>
+        </div>
+
+        <div class="stop">
+          <div class="stop-head">
+            <span class="stop-time">12:30 PM</span>
+            <span class="stop-name">Walk to Howth Castle</span>
+          </div>
+          <p class="stop-note">10-min walk from the village along the coast road.</p>
+        </div>
+
+        <div class="stop">
+          <div class="stop-head">
+            <span class="stop-time">1:00 PM · ~75 min</span>
+            <span class="stop-name">Howth Castle · guided tour ✓</span>
+          </div>
+          <p class="stop-note">The booked tour. Should wrap around 2:15 PM.</p>
+        </div>
+
+        <div class="stop">
+          <div class="stop-head">
+            <span class="stop-time">2:30 PM · ~90 min</span>
+            <span class="stop-name">Cliff Walk · Green Route</span>
+          </div>
+          <p class="stop-note">Trailhead is a short walk from the castle grounds. 6 km loop with the best sea views in the Dublin area — dramatic cliffs, wildflowers, the Baily Lighthouse in the distance. Pack layers, wear real shoes. The Green Route is the easy one; the Purple and Red are longer and steeper.</p>
+        </div>
+
+        <div class="stop">
+          <div class="stop-head">
+            <span class="stop-time">4:30 PM</span>
+            <span class="stop-name">Seafood dinner at the harbour</span>
+          </div>
+          <p class="stop-note"><strong>Octopussy's Seafood Tapas</strong> (local favorite, freshest fish, group-friendly) · <strong>The Oar House</strong> (classic fish &amp; chips, harbour views) · <strong>Aqua</strong> (splurge, best view, on the pier — call ahead for a party of six on a Sunday) · <strong>King Sitric</strong> (old-school Howth institution, more formal).</p>
+        </div>
+
+        <div class="stop">
+          <div class="stop-head">
+            <span class="stop-time">6:30 PM</span>
+            <span class="stop-name">DART back to Connolly · 3 min home</span>
+          </div>
+          <p class="stop-note">Wynn's is right there.</p>
+        </div>
+
+        <div class="stop">
+          <div class="stop-head">
+            <span class="stop-time">8:00 PM</span>
+            <span class="stop-name">One last pint</span>
+          </div>
+          <p class="stop-note"><strong>Mulligan's</strong> on Poolbeg Street (10 min from Wynn's) is a perfect final Dublin memory — arguably the best Guinness pour in the city, unchanged in a century. Or <strong>The Brazen Head</strong> (Ireland's oldest pub, since 1198) if you want the historical box ticked. Back by 11.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== MONDAY ========== -->
+<section id="monday">
+  <div class="container">
+    <div class="section-mark">Chapter VI</div>
+    <h2 class="section-title"><em>Monday</em> · depart</h2>
+    <p class="section-meta">Wheels up 10:00 AM · Leave hotel by 7:00 AM</p>
+
+    <div class="day">
+      <div class="day-label"><span class="num">Mon</span>Depart</div>
+      <div class="day-content">
+        <h3 class="day-title">Wheels up at <em>10:00 AM</em></h3>
+        <p class="day-narrative">Aim to be at the airport by 8 AM for international departures.</p>
+
+        <div class="stop">
+          <div class="stop-head">
+            <span class="stop-time">6:30 AM</span>
+            <span class="stop-name">Wake up · quick breakfast at hotel</span>
+          </div>
+          <p class="stop-note">Nothing heavy. Coffee and something small — you can eat properly at the airport if hungry.</p>
+        </div>
+
+        <div class="stop">
+          <div class="stop-head">
+            <span class="stop-time">7:00 AM</span>
+            <span class="stop-name">Head to the airport</span>
+          </div>
+          <p class="stop-note"><strong>Airlink 747 bus</strong> stops right outside Connolly Station, 3 min from Wynn's, every 15 min, ~30 min ride, €7 per person. <strong>Taxi/Uber</strong> is €25–30 total, 20–25 min — easier with luggage and split three ways among couples.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== EXTRAS ========== -->
+<section id="extras">
+  <div class="container">
+    <div class="section-mark">Chapter VII</div>
+    <h2 class="section-title">Restaurants &amp; <em>pubs</em></h2>
+    <p class="section-meta">Backups &amp; alternatives · If plans shift</p>
+
+    <p class="lede">The itinerary above covers the essentials. Here's the wider list — extra dinner options if reservations fall through, more pubs than you can hit in one weekend, and a few skip-list warnings.</p>
+
+    <h3 class="subhead">Restaurants worth knowing</h3>
+    <p class="subhead-note">If your first pick is full or you want to swap</p>
+    <div class="venue-grid">
+      <div class="venue">
+        <div class="venue-tag">Splurge · Michelin</div>
+        <div class="venue-name">Chapter One</div>
+        <p class="venue-desc">12-min walk from Wynn's up Parnell Square. One-star Michelin, ambitious modern Irish, one of the best meals in Ireland. Book weeks ahead if you want it for Saturday.</p>
+      </div>
+      <div class="venue">
+        <div class="venue-tag">Modern · Inventive</div>
+        <div class="venue-name">Mr Fox</div>
+        <p class="venue-desc">Underground spot near Parnell Square. Playful, creative Irish cooking. Easier reservation than Chapter One, still special.</p>
+      </div>
+      <div class="venue">
+        <div class="venue-tag">Casual · Near Wynn's</div>
+        <div class="venue-name">The Woollen Mills</div>
+        <p class="venue-desc">3-min walk. All-day dining, hearty Irish comfort food, right at Ha'penny Bridge. Reliable backup for Friday or a lazy brunch.</p>
+      </div>
+      <div class="venue">
+        <div class="venue-tag">Mediterranean · Near Wynn's</div>
+        <div class="venue-name">101 Talbot</div>
+        <p class="venue-desc">4-min walk. Been around forever, Mediterranean-Irish menu, reliable and reasonably priced.</p>
+      </div>
+      <div class="venue">
+        <div class="venue-tag">Small Plates · Wine</div>
+        <div class="venue-name">Etto</div>
+        <p class="venue-desc">Merrion Row. Small plates and wine-bar vibe, Italian-leaning. Perfect if you want a lighter, more casual dinner.</p>
+      </div>
+      <div class="venue">
+        <div class="venue-tag">Seafood · Smithfield</div>
+        <div class="venue-name">Fish Shop</div>
+        <p class="venue-desc">Tiny counter-style spot in Smithfield. Seafood-focused, exceptional. Small — a party of six would need to book far ahead.</p>
+      </div>
+    </div>
+
+    <h3 class="subhead">Pubs beyond the plan</h3>
+    <p class="subhead-note">The trad-music trio and the historic pours</p>
+    <div class="venue-grid">
+      <div class="venue">
+        <div class="venue-tag">Trad Music · Historic</div>
+        <div class="venue-name">The Cobblestone</div>
+        <p class="venue-desc">Smithfield. The trad session pub — locals jamming, not performers. No food, no pretense. Saturday night is the play.</p>
+      </div>
+      <div class="venue">
+        <div class="venue-tag">Trad Music · Iconic</div>
+        <div class="venue-name">O'Donoghues</div>
+        <p class="venue-desc">Merrion Row (not the tourist trap on Suffolk St). The Dubliners played here. Cozy, packed on weekends, brilliant music. Great Friday option.</p>
+      </div>
+      <div class="venue">
+        <div class="venue-tag">Best Guinness</div>
+        <div class="venue-name">Mulligan's</div>
+        <p class="venue-desc">Poolbeg Street. Widely considered the best-poured Guinness in Dublin. Zero frills, unchanged for a century, perfect final-night pub.</p>
+      </div>
+      <div class="venue">
+        <div class="venue-tag">Historic · Victorian</div>
+        <div class="venue-name">The Palace Bar</div>
+        <p class="venue-desc">Fleet Street. Victorian-era interior, stained glass, cozy snugs. A writer's pub — Yeats, Kavanagh, Behan all drank here.</p>
+      </div>
+      <div class="venue">
+        <div class="venue-tag">Oldest in Ireland</div>
+        <div class="venue-name">The Brazen Head</div>
+        <p class="venue-desc">Since 1198. Touristy but the atmosphere genuinely earns it — Irish stew and a pint is the move. Good stop on the walk back from Cobblestone.</p>
+      </div>
+      <div class="venue">
+        <div class="venue-tag">Trad Music · Alternative</div>
+        <div class="venue-name">Hughes' Bar</div>
+        <p class="venue-desc">Chancery Street, near the Four Courts. Excellent trad sessions, fewer tourists than Cobblestone. Perfect if Cobblestone is packed.</p>
+      </div>
+    </div>
+
+    <h3 class="subhead">Skip list</h3>
+    <p class="subhead-note">Things to save your time and money on</p>
+    <div class="venue-grid">
+      <div class="venue">
+        <div class="venue-tag">Skip</div>
+        <div class="venue-name">Most of Temple Bar</div>
+        <p class="venue-desc">Overpriced and almost entirely tourists — pints hitting €10. Walk through, take the photo, then go elsewhere. The real Dublin pubs are 5 minutes away in every direction.</p>
+      </div>
+      <div class="venue">
+        <div class="venue-tag">Skip</div>
+        <div class="venue-name">The O'Donoghues on Suffolk St</div>
+        <p class="venue-desc">Not the famous one. Confusingly named. Go to O'Donoghues on Merrion Row instead — that's the one with the trad music heritage.</p>
+      </div>
+      <div class="venue">
+        <div class="venue-tag">Skip</div>
+        <div class="venue-name">Glendalough as a day trip</div>
+        <p class="venue-desc">Beautiful, but eats a whole day for what's essentially "another nice walk." Howth gives you 80% of the experience in half the time, with seafood at the end and no rental car needed.</p>
+      </div>
+      <div class="venue">
+        <div class="venue-tag">Skip</div>
+        <div class="venue-name">Hop-on hop-off buses</div>
+        <p class="venue-desc">Dublin is small and walkable. Six people in a taxi is €12 for any city trip. The buses are slow, expensive per person, and get stuck in traffic.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="ornament">~ Sláinte ~</div>
+    <div>Compiled with care · Print or save for the road</div>
+  </div>
+</footer>
+
+</body>
+</html>
