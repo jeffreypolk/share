@@ -1,0 +1,938 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Paris — 16 to 20 September</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Karla:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --limestone: #e9e3d7;
+    --limestone-pale: #f3efe6;
+    --limestone-deep: #dcd4c4;
+    --zinc: #4a5763;
+    --zinc-deep: #2f3841;
+    --ink: #1b2128;
+    --ink-soft: #46505a;
+    --ink-faint: #7c8590;
+    --brass: #9c7735;
+    --brass-pale: #c9a969;
+    --wine: #78303a;
+    --line: #cdc4b2;
+    --line-faint: #ded6c7;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; scroll-padding-top: 72px; }
+
+  body {
+    font-family: 'Karla', 'Helvetica Neue', sans-serif;
+    font-size: 17px;
+    line-height: 1.62;
+    color: var(--ink);
+    background: var(--limestone);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap {
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 0 30px;
+  }
+
+  a { color: var(--wine); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+  a:focus-visible, .nav a:focus-visible {
+    outline: 2px solid var(--brass);
+    outline-offset: 3px;
+  }
+
+  /* ─── HERO ─────────────────────────────── */
+  .hero {
+    padding: 76px 0 52px;
+    border-bottom: 1px solid var(--line);
+    background: var(--limestone-pale);
+  }
+  .hero-city {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-weight: 300;
+    font-size: clamp(66px, 15vw, 132px);
+    line-height: 0.86;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+  }
+  .hero-dates {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: clamp(24px, 5vw, 38px);
+    color: var(--brass);
+    margin-top: 6px;
+  }
+  .hero-rule {
+    height: 1px;
+    background: var(--line);
+    margin: 34px 0 26px;
+  }
+  .bookends {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+  }
+  .bookend .clock {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 34px;
+    font-weight: 400;
+    line-height: 1;
+    color: var(--zinc);
+  }
+  .bookend .what {
+    font-size: 14.5px;
+    color: var(--ink-soft);
+    margin-top: 5px;
+  }
+  .bookend .where {
+    font-size: 14.5px;
+    color: var(--ink-faint);
+  }
+
+  /* ─── NAV ──────────────────────────────── */
+  .nav {
+    position: sticky;
+    top: 0;
+    z-index: 40;
+    background: rgba(233, 227, 215, 0.94);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav-inner {
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 0 30px;
+    display: flex;
+    gap: 22px;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .nav-inner::-webkit-scrollbar { display: none; }
+  .nav a {
+    flex: 0 0 auto;
+    padding: 14px 0;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--ink-soft);
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    white-space: nowrap;
+  }
+  .nav a:hover { color: var(--wine); border-bottom-color: var(--brass-pale); }
+
+  /* ─── SECTIONS ─────────────────────────── */
+  section { padding: 58px 0; border-bottom: 1px solid var(--line-faint); }
+  section:last-of-type { border-bottom: none; }
+
+  h2 {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-weight: 400;
+    font-size: 42px;
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+    margin-bottom: 8px;
+  }
+  h2 .sub {
+    display: block;
+    font-family: 'Karla', sans-serif;
+    font-size: 14.5px;
+    font-weight: 400;
+    color: var(--ink-faint);
+    letter-spacing: 0;
+    margin-top: 8px;
+  }
+  h3 {
+    font-family: 'Karla', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    color: var(--zinc-deep);
+    margin: 32px 0 12px;
+  }
+  p { margin-bottom: 15px; max-width: 68ch; }
+  p:last-child { margin-bottom: 0; }
+  strong { font-weight: 700; }
+  em { font-style: italic; }
+
+  /* ─── FLAG / CALLOUT ───────────────────── */
+  .flag {
+    border-left: 3px solid var(--wine);
+    background: rgba(120, 48, 58, 0.055);
+    padding: 20px 24px;
+    margin: 26px 0;
+  }
+  .flag h4 {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--wine);
+    margin-bottom: 7px;
+  }
+  .flag p { font-size: 16px; margin-bottom: 10px; }
+
+  .note {
+    border-left: 3px solid var(--brass-pale);
+    background: rgba(156, 119, 53, 0.06);
+    padding: 18px 22px;
+    margin: 24px 0;
+    font-size: 16px;
+  }
+
+  /* ─── WALK TIMES ───────────────────────── */
+  .walks {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    gap: 0 30px;
+    margin-top: 20px;
+    border-top: 1px solid var(--line);
+  }
+  .walk {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--line-faint);
+    font-size: 15.5px;
+  }
+  .walk .dest { color: var(--ink); }
+  .walk .dur {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 19px;
+    color: var(--brass);
+    white-space: nowrap;
+  }
+
+  /* ─── BOOKING LIST ─────────────────────── */
+  .booking {
+    display: grid;
+    grid-template-columns: 34px 1fr auto;
+    gap: 0 18px;
+    align-items: start;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--line-faint);
+  }
+  .booking:first-of-type { border-top: 1px solid var(--line); }
+  .rank {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 30px;
+    line-height: 1;
+    color: var(--brass-pale);
+  }
+  .booking .title { font-weight: 700; font-size: 17px; }
+  .booking .detail {
+    font-size: 15.5px;
+    color: var(--ink-soft);
+    margin-top: 4px;
+    max-width: 56ch;
+  }
+  .booking .site {
+    font-size: 13.5px;
+    color: var(--ink-faint);
+    margin-top: 6px;
+  }
+  .tag {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    padding: 4px 10px;
+    border-radius: 2px;
+    white-space: nowrap;
+  }
+  .tag-now { background: var(--wine); color: var(--limestone-pale); }
+  .tag-soon { background: var(--brass); color: var(--limestone-pale); }
+  .tag-later { background: transparent; color: var(--zinc); border: 1px solid var(--line); }
+
+  /* ─── DAYS ─────────────────────────────── */
+  .day-head {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 16px;
+  }
+  .day-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 46px;
+    font-weight: 300;
+    line-height: 1;
+    color: var(--ink);
+  }
+  .day-dow {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 26px;
+    color: var(--brass);
+  }
+  .day-gist {
+    font-size: 15px;
+    color: var(--ink-faint);
+    margin-left: auto;
+  }
+
+  .anchor {
+    display: grid;
+    grid-template-columns: 82px 1fr;
+    gap: 0 20px;
+    padding: 16px 0;
+    border-top: 1px solid var(--line);
+  }
+  .anchor .time {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    color: var(--zinc);
+    padding-top: 1px;
+  }
+  .anchor .time .loose {
+    display: block;
+    font-family: 'Karla', sans-serif;
+    font-size: 12.5px;
+    font-style: italic;
+    color: var(--ink-faint);
+  }
+  .anchor .name { font-weight: 700; font-size: 17px; }
+  .anchor .name .booked {
+    font-weight: 400;
+    font-size: 13px;
+    color: var(--brass);
+    font-style: italic;
+    margin-left: 7px;
+  }
+  .anchor .body {
+    font-size: 15.5px;
+    color: var(--ink-soft);
+    margin-top: 5px;
+    max-width: 60ch;
+  }
+
+  .drift {
+    margin-top: 26px;
+    padding: 22px 24px;
+    background: var(--limestone-pale);
+    border: 1px solid var(--line-faint);
+  }
+  .drift h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 24px;
+    font-weight: 400;
+    color: var(--zinc-deep);
+    margin-bottom: 10px;
+  }
+  .drift ul { list-style: none; }
+  .drift li {
+    padding: 7px 0 7px 20px;
+    position: relative;
+    font-size: 15.5px;
+    color: var(--ink-soft);
+    border-bottom: 1px solid var(--line-faint);
+  }
+  .drift li:last-child { border-bottom: none; }
+  .drift li::before {
+    content: '';
+    position: absolute;
+    left: 2px;
+    top: 16px;
+    width: 8px;
+    height: 1px;
+    background: var(--brass-pale);
+  }
+  .drift li b { color: var(--ink); font-weight: 700; }
+
+  /* ─── EATING GRID ──────────────────────── */
+  .eats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(258px, 1fr));
+    gap: 1px;
+    background: var(--line-faint);
+    border: 1px solid var(--line-faint);
+    margin-top: 18px;
+  }
+  .eat {
+    background: var(--limestone-pale);
+    padding: 18px 20px;
+  }
+  .eat .n { font-weight: 700; font-size: 16.5px; }
+  .eat .a { font-size: 13.5px; color: var(--ink-faint); margin-top: 2px; }
+  .eat .d { font-size: 15px; color: var(--ink-soft); margin-top: 8px; }
+
+  /* ─── FOOTER ───────────────────────────── */
+  footer {
+    background: var(--zinc-deep);
+    color: var(--limestone-deep);
+    padding: 46px 0;
+    text-align: center;
+  }
+  footer .orn {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 30px;
+    color: var(--brass-pale);
+    margin-bottom: 8px;
+  }
+  footer .fine { font-size: 14px; color: #8d97a2; }
+
+  @media (max-width: 620px) {
+    body { font-size: 16px; }
+    .wrap, .nav-inner { padding: 0 20px; }
+    .hero { padding: 52px 0 40px; }
+    .bookends { grid-template-columns: 1fr; gap: 18px; }
+    h2 { font-size: 34px; }
+    .anchor { grid-template-columns: 1fr; gap: 6px; }
+    .anchor .time { font-size: 19px; }
+    .booking { grid-template-columns: 26px 1fr; }
+    .booking .tag { grid-column: 2; justify-self: start; margin-top: 9px; }
+    .day-gist { margin-left: 0; width: 100%; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+  }
+
+  @media print {
+    .nav { display: none; }
+    body { background: #fff; font-size: 12pt; }
+    section { padding: 24px 0; page-break-inside: avoid; }
+    .drift, .eat, .hero { background: #fff; }
+    footer { background: #fff; color: #000; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="hero-city">Paris</div>
+    <div class="hero-dates">the sixteenth to the twentieth of September</div>
+    <div class="hero-rule"></div>
+    <div class="bookends">
+      <div class="bookend">
+        <div class="clock">16:57 · Wed</div>
+        <div class="what">Eurostar into Gare du Nord</div>
+        <div class="where">Four nights at 25 Rue des Écouffes, 4<sup>e</sup></div>
+      </div>
+      <div class="bookend">
+        <div class="clock">13:55 · Sun</div>
+        <div class="what">Wheels up from Charles de Gaulle</div>
+        <div class="where">Leave the flat by 09:30</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#shape">The shape of it</a>
+    <a href="#book">Book first</a>
+    <a href="#wed">Wed</a>
+    <a href="#thu">Thu</a>
+    <a href="#fri">Fri</a>
+    <a href="#sat">Sat</a>
+    <a href="#sun">Sun</a>
+    <a href="#eat">Eating</a>
+    <a href="#basics">Basics</a>
+  </div>
+</nav>
+
+<!-- ══ SHAPE ══════════════════════════════ -->
+<section id="shape">
+  <div class="wrap">
+    <h2>The shape of it
+      <span class="sub">Three and a half days, two fixed points, and a lot of deliberate slack</span>
+    </h2>
+
+    <p>You've got four nights and, realistically, three full days. The temptation with Paris is to schedule every hour of them. Don't. This guide gives each day <strong>two or three anchors</strong> — things with a time attached, usually because they're booked — and then leaves the rest open, with a short list of what's nearby if you want it. If you skip everything on the loose lists and sit in a café for two hours instead, the day still works.</p>
+
+    <p>The one real advantage you have is location. You're in the middle of the Marais, a few minutes from the river, and the jazz club is a six-minute walk from your front door. Almost nothing in this plan requires a long transit leg.</p>
+
+    <h3>From your door</h3>
+    <div class="walks">
+      <div class="walk"><span class="dest">Saint-Paul métro (line 1)</span><span class="dur">3 min</span></div>
+      <div class="walk"><span class="dest">38Riv</span><span class="dur">6 min</span></div>
+      <div class="walk"><span class="dest">Place des Vosges</span><span class="dur">8 min</span></div>
+      <div class="walk"><span class="dest">Île Saint-Louis</span><span class="dur">9 min</span></div>
+      <div class="walk"><span class="dest">Notre-Dame</span><span class="dur">13 min</span></div>
+      <div class="walk"><span class="dest">Sainte-Chapelle</span><span class="dur">16 min</span></div>
+      <div class="walk"><span class="dest">Marché des Enfants Rouges</span><span class="dur">10 min</span></div>
+      <div class="walk"><span class="dest">Louvre</span><span class="dur">22 min · or 8 by métro</span></div>
+      <div class="walk"><span class="dest">Musée d'Orsay</span><span class="dur">25 min by métro</span></div>
+      <div class="walk"><span class="dest">Eiffel Tower</span><span class="dur">35 min by métro</span></div>
+    </div>
+
+    <div class="flag">
+      <h4>Saturday and Sunday are Heritage Days</h4>
+      <p>The 43rd Journées européennes du patrimoine falls on 19–20 September, and over 1,500 venues open across Paris. Two consequences worth planning around.</p>
+      <p><strong>The good:</strong> the Arc de Triomphe is free both days with no reservation, open 10:00 to 23:00. Sainte-Chapelle is free too.</p>
+      <p><strong>The bad:</strong> central Paris will be conspicuously busier, and "free Sainte-Chapelle" means a queue that eats your morning. That's why every ticketed indoor sight in this plan lands on Thursday or Friday, and Saturday stays outdoors and flexible.</p>
+    </div>
+
+    <div class="note">
+      <strong>Centre Pompidou is shut.</strong> It's a five-minute walk from you, so it's worth knowing before you wander over. It closed in September 2025 for a €460m renovation and doesn't reopen until 2030. The Bourse de Commerce near Les Halles is the nearest equivalent if you want modern art.
+    </div>
+  </div>
+</section>
+
+<!-- ══ BOOKINGS ═══════════════════════════ -->
+<section id="book">
+  <div class="wrap">
+    <h2>Book first
+      <span class="sub">Ranked by how likely it is to disappear on you</span>
+    </h2>
+
+    <div class="booking">
+      <div class="rank">1</div>
+      <div>
+        <div class="title">Seine dinner cruise — Friday</div>
+        <div class="detail">The thing most likely to sell out, and the reason it's first. Le Calife and Ducasse sur Seine typically go 4–8 weeks ahead; the larger operators have more capacity but still fill in September. Aim to board around 19:30–20:00 — sunset is roughly 19:50, so you get the last light going out and the illuminated city coming back. Every one of these has a dress code; smart casual is the floor.</div>
+        <div class="site">Three real options, compared below</div>
+      </div>
+      <div class="tag tag-now">Today</div>
+    </div>
+
+    <div class="booking">
+      <div class="rank">2</div>
+      <div>
+        <div class="title">Eiffel Tower, summit by lift — Saturday 09:30</div>
+        <div class="detail">Lift tickets are released up to 60 days out and summit slots go first. €36.70 for an adult. Book on the official site only — there's no such thing as skipping the line here, since everyone goes through the same security screening regardless of what they paid.</div>
+        <div class="site">toureiffel.paris</div>
+      </div>
+      <div class="tag tag-now">Today</div>
+    </div>
+
+    <div class="booking">
+      <div class="rank">3</div>
+      <div>
+        <div class="title">Louvre — Friday 09:00</div>
+        <div class="detail">€32 for non-EU adults, in 30-minute timed entry windows. Buy direct: the museum has publicly warned about a rise in mirror sites selling fraudulent tickets, and anyone promising queue-jumping is lying to you.</div>
+        <div class="site">ticket.louvre.fr</div>
+      </div>
+      <div class="tag tag-now">Today</div>
+    </div>
+
+    <div class="booking">
+      <div class="rank">4</div>
+      <div>
+        <div class="title">Sainte-Chapelle + Conciergerie — Thursday 09:00</div>
+        <div class="detail">About €30 combined at the non-EU rate. Only the chapel entry is timed; the Conciergerie you can do whenever that day. One thing people get wrong: the chapel sits inside a working courthouse, and security runs 30–60 minutes at peak even with a booked slot. Be in line twenty minutes before your time, not on it.</div>
+        <div class="site">sainte-chapelle.fr</div>
+      </div>
+      <div class="tag tag-now">Today</div>
+    </div>
+
+    <div class="booking">
+      <div class="rank">5</div>
+      <div>
+        <div class="title">Musée d'Orsay — Friday afternoon</div>
+        <div class="detail">Timed entry, book direct. Worth noting that Thursday is its late night, not Friday — on Friday it closes at 18:00, so a 14:00 or 14:30 slot gives you a comfortable three hours.</div>
+        <div class="site">musee-orsay.fr</div>
+      </div>
+      <div class="tag tag-now">Today</div>
+    </div>
+
+    <div class="booking">
+      <div class="rank">6</div>
+      <div>
+        <div class="title">Two dinner tables — Thursday and Saturday</div>
+        <div class="detail">Thursday needs to be early and close to home so you're not rushing to the jazz. Saturday is your last night and deserves a real reservation. The better Marais places want a week or two of notice.</div>
+        <div class="site">Suggestions in the eating section</div>
+      </div>
+      <div class="tag tag-soon">This week</div>
+    </div>
+
+    <div class="booking">
+      <div class="rank">7</div>
+      <div>
+        <div class="title">Notre-Dame — set a reminder for Monday 15 September</div>
+        <div class="detail">Entry is free and always has been — anyone selling you a cathedral ticket is running a scam. But the free timed reservations only open two to three days before the date, released in rolling batches through the day. Without one you're in the walk-in queue, which runs two to three hours in September. Create your account on the official app now so you're ready. If the first check shows nothing, keep looking — new slots surface roughly every half hour.</div>
+        <div class="site">notredamedeparis.fr, or the official app</div>
+      </div>
+      <div class="tag tag-later">15 Sep</div>
+    </div>
+
+    <div class="booking">
+      <div class="rank">8</div>
+      <div>
+        <div class="title">Heritage Days special tours — optional</div>
+        <div class="detail">The Louvre runs behind-the-scenes tours of normally sealed spaces on the 19th and 20th, booked separately from museum admission. Registration opens a few weeks out and vanishes fast. Treat this as a lottery ticket, not a plan.</div>
+        <div class="site">paris.fr, or the Louvre's events calendar</div>
+      </div>
+      <div class="tag tag-later">Watch</div>
+    </div>
+
+    <h3>Choosing the cruise</h3>
+    <div class="eats">
+      <div class="eat">
+        <div class="n">Ducasse sur Seine</div>
+        <div class="a">Port Debilly · around €270pp</div>
+        <div class="d">A silent electric boat and serious cooking. It's a restaurant that happens to float, not a boat with food — quiet, slow, no music. People either love it or find it too subdued for the money. Add the wine pairing if you go.</div>
+      </div>
+      <div class="eat">
+        <div class="n">Bateaux Mouches</div>
+        <div class="a">Pont de l'Alma · around €155pp top tier</div>
+        <div class="d">Best value of the big operators. Four courses with champagne and wine included, a bigger room, and a full open-air rooftop deck — which matters more than you'd think for the sunset. Explicitly bans shorts, flip-flops and caps.</div>
+      </div>
+      <div class="eat">
+        <div class="n">Bateaux Parisiens</div>
+        <div class="a">Port de la Bourdonnais · €139–215pp</div>
+        <div class="d">Boards directly beneath the Eiffel Tower, which is the draw. Comparable food, slightly less generous on the drinks at each tier, and only a small terrace at the stern rather than a proper deck.</div>
+      </div>
+    </div>
+
+    <div class="note">
+      <strong>Skip the Paris Museum Pass.</strong> With this itinerary you'd roughly break even, and you'd still have to make separate timed reservations for the Louvre anyway. Booking each thing direct is simpler and no more expensive.
+    </div>
+  </div>
+</section>
+
+<!-- ══ WEDNESDAY ══════════════════════════ -->
+<section id="wed">
+  <div class="wrap">
+    <div class="day-head">
+      <span class="day-num">16</span>
+      <span class="day-dow">Wednesday</span>
+      <span class="day-gist">Arrive, drop bags, don't plan anything</span>
+    </div>
+
+    <p>You land at 16:57 with luggage and a train behind you. The whole job tonight is to get to the flat, walk somewhere pretty, and eat. Anything more ambitious will feel like a chore.</p>
+
+    <div class="anchor">
+      <div class="time">16:57</div>
+      <div>
+        <div class="name">Gare du Nord to Saint-Paul</div>
+        <div class="body">Line 4 to Châtelet, change to line 1, off at Saint-Paul. About 25 minutes with the change, then a three-minute walk. With bags after a travel day a taxi is worth the €20 — but the métro genuinely is faster in evening traffic.</div>
+      </div>
+    </div>
+
+    <div class="anchor">
+      <div class="time">18:45<span class="loose">roughly</span></div>
+      <div>
+        <div class="name">Place des Vosges</div>
+        <div class="body">Eight minutes east. The oldest planned square in Paris, arcaded on all four sides, and the single best place to be at dusk with a drink. Sit on the grass or take a table under the arches.</div>
+      </div>
+    </div>
+
+    <div class="anchor">
+      <div class="time">20:00<span class="loose">whenever</span></div>
+      <div>
+        <div class="name">Dinner, close to home</div>
+        <div class="body">Nothing that needs a reservation or a métro ride. See the eating section — Chez Janou and Café des Musées are both a short walk and both forgiving of a late-ish arrival.</div>
+      </div>
+    </div>
+
+    <div class="drift">
+      <h4>If you've still got legs</h4>
+      <ul>
+        <li><b>Île Saint-Louis after dark.</b> Nine minutes from the flat, and the walk along Quai de Bourbon with Notre-Dame lit behind you is the best free thing in Paris.</li>
+        <li><b>Pont de la Tournelle.</b> The view of the cathedral's flying buttresses from here is better than the view from the front.</li>
+        <li><b>A nightcap on Rue Vieille du Temple.</b> The Marais stays up. Le Mary Celeste does oysters and cocktails until late.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ══ THURSDAY ═══════════════════════════ -->
+<section id="thu">
+  <div class="wrap">
+    <div class="day-head">
+      <span class="day-num">17</span>
+      <span class="day-dow">Thursday</span>
+      <span class="day-gist">Gothic morning, open afternoon, jazz at night</span>
+    </div>
+
+    <p>One tight cluster in the morning, then nothing scheduled until dinner. Everything before lunch is within a few hundred metres on the Île de la Cité, so you can be done by one o'clock without hurrying. The afternoon is deliberately empty — the Left Bank is right there and it rewards aimlessness more than any other part of Paris.</p>
+
+    <div class="anchor">
+      <div class="time">08:40</div>
+      <div>
+        <div class="name">Line up at Sainte-Chapelle <span class="booked">booked 09:00</span></div>
+        <div class="body">Get there early — the security line, not the ticket, is what costs you time. First slot of the day means you get the upper chapel while the light is coming through fifteen metres of thirteenth-century glass and before anyone else is in the frame. Half an hour is plenty; there's only one room worth the trip.</div>
+      </div>
+    </div>
+
+    <div class="anchor">
+      <div class="time">10:15</div>
+      <div>
+        <div class="name">Conciergerie <span class="booked">same ticket</span></div>
+        <div class="body">Two minutes north on Quai de l'Horloge. Vast bare Gothic halls and Marie Antoinette's cell. Take the tablet guide at the desk — it overlays the rooms as they were, and without it the place reads as a lot of empty stone.</div>
+      </div>
+    </div>
+
+    <div class="anchor">
+      <div class="time">11:30</div>
+      <div>
+        <div class="name">Notre-Dame <span class="booked">free slot, booked 15 Sep</span></div>
+        <div class="body">Allow fifteen minutes for security on top of your slot. The restored interior is the surprise — eight centuries of soot came off with the repairs, and the stone is pale in a way nobody alive had seen it. Shoulders and knees covered.</div>
+      </div>
+    </div>
+
+    <div class="anchor">
+      <div class="time">21:00</div>
+      <div>
+        <div class="name">38Riv <span class="booked">show at 21:30</span></div>
+        <div class="body">Six minutes from the flat. It's a vaulted stone cellar and the seating is first-come — if your ticket doesn't assign a place, get there when the doors open rather than at showtime. Eat before; this is a listening room, not a dinner venue.</div>
+      </div>
+    </div>
+
+    <div class="drift">
+      <h4>The open afternoon</h4>
+      <ul>
+        <li><b>Cross to the Left Bank and eat somewhere on a side street.</b> Anywhere off Boulevard Saint-Germain. The rule is simple: no menu in six languages, no photographs of the food.</li>
+        <li><b>Shakespeare and Company.</b> Directly across from the cathedral. Crowded and worth it anyway. The reading room upstairs is free and quiet.</li>
+        <li><b>Rue Mouffetard.</b> A properly old market street climbing away from the Panthéon, fifteen minutes' walk south. Cheese, bread, a beer at the bottom.</li>
+        <li><b>Jardin du Luxembourg.</b> Take one of the green metal chairs by the fountain and stay an hour. This is the correct use of a Paris afternoon.</li>
+        <li><b>The Panthéon</b> if you want a roof — the dome colonnade has one of the better views over the Left Bank, and it's rarely busy.</li>
+        <li><b>Or skip the river entirely</b> and stay in the Marais: Musée Carnavalet (the history of Paris, free permanent collection) and the Musée Picasso are both ten minutes from the flat.</li>
+      </ul>
+    </div>
+
+    <div class="note">
+      Give yourselves an hour back at the flat before dinner. It's a long day and the show doesn't finish early.
+    </div>
+  </div>
+</section>
+
+<!-- ══ FRIDAY ═════════════════════════════ -->
+<section id="fri">
+  <div class="wrap">
+    <div class="day-head">
+      <span class="day-num">18</span>
+      <span class="day-dow">Friday</span>
+      <span class="day-gist">Two museums, then the river</span>
+    </div>
+
+    <p>The most structured day of the four, because both museums are timed and the boat won't wait. But there's a real gap in the middle, and the walk from the Orsay to the boat along the quais is the best forty-five minutes of the trip if the weather holds.</p>
+
+    <p>One honest warning about the Louvre: you cannot see it. Pick two or three things you actually want, walk to them, and leave when you're bored. Three hours is a full visit. Five is a forced march.</p>
+
+    <div class="anchor">
+      <div class="time">09:00</div>
+      <div>
+        <div class="name">Louvre <span class="booked">booked</span></div>
+        <div class="body">Enter through the Pyramid with a timed ticket, or use the Carrousel entrance underground if the courtyard queue looks grim. Denon wing first while it's quiet — Italian painting, the Winged Victory on the stairs — then double back through Sully for the Egyptian rooms and the medieval foundations of the original fortress in the basement, which almost nobody visits.</div>
+      </div>
+    </div>
+
+    <div class="anchor">
+      <div class="time">14:30</div>
+      <div>
+        <div class="name">Musée d'Orsay <span class="booked">booked</span></div>
+        <div class="body">Start on the fifth floor and work down. The Impressionist galleries are the reason to come and they're at the top; if you begin at the ground floor you'll arrive at them tired. Closes at 18:00 on Fridays.</div>
+      </div>
+    </div>
+
+    <div class="anchor">
+      <div class="time">19:30</div>
+      <div>
+        <div class="name">Board the cruise <span class="booked">confirm your dock</span></div>
+        <div class="body">Pont de l'Alma or Port de la Bourdonnais depending on which you booked — check, because they're a twenty-minute walk apart and it's an easy mistake. Sunset is around 19:50. The tower sparkles for five minutes on the hour, and you'll usually catch the 22:00 one from the water on the way back in.</div>
+      </div>
+    </div>
+
+    <div class="drift">
+      <h4>The gap between them</h4>
+      <ul>
+        <li><b>Lunch at Palais-Royal.</b> Five minutes from the Louvre exit, and the garden behind the colonnade is a genuinely peaceful courtyard in the middle of the first arrondissement.</li>
+        <li><b>Galerie Vivienne.</b> A glass-roofed 1820s shopping arcade with mosaic floors, two minutes further. Takes ten minutes to walk and is worth every one.</li>
+        <li><b>Walk the Tuileries</b> from the Louvre to Place de la Concorde, then cross the Seine on the Pont Royal straight to the Orsay's front door. That's your transit and your sightseeing in one.</li>
+        <li><b>The Orangerie,</b> at the far end of the Tuileries, if you want a third museum — two oval rooms of Monet's water lilies and not much else. Forty minutes, and a better experience than most of the Louvre.</li>
+        <li><b>After the Orsay,</b> walk west along the Left Bank quais toward the tower. Roughly forty-five minutes, entirely along the river, and it puts you at the dock with time to spare.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SATURDAY ═══════════════════════════ -->
+<section id="sat">
+  <div class="wrap">
+    <div class="day-head">
+      <span class="day-num">19</span>
+      <span class="day-dow">Saturday</span>
+      <span class="day-gist">One booked thing, then whatever you feel like</span>
+    </div>
+
+    <p>Deliberately the loosest day. It's the busiest day of your trip citywide because of Heritage Days, so the plan is to get the one ticketed thing done early and then stay outdoors and unhurried. If you end up doing nothing after lunch but sitting in the Marais, that's a good Saturday.</p>
+
+    <div class="anchor">
+      <div class="time">09:30</div>
+      <div>
+        <div class="name">Eiffel Tower, summit <span class="booked">booked</span></div>
+        <div class="body">First slot. Security screening applies to everyone regardless of ticket, so allow twenty minutes on top. Two hours covers the summit, the second floor and the glass floor on the first. Come down before the midday crush builds on the Champ de Mars.</div>
+      </div>
+    </div>
+
+    <div class="anchor">
+      <div class="time">15:00<span class="loose">or later</span></div>
+      <div>
+        <div class="name">Arc de Triomphe</div>
+        <div class="body">Free all day for Heritage Days, no reservation, open until 23:00. Take the underpass, never the roundabout. The roof looks down all twelve avenues at once and is the better Paris view of the two — you can see the tower from it, which you can't from the tower.</div>
+      </div>
+    </div>
+
+    <div class="anchor">
+      <div class="time">20:00</div>
+      <div>
+        <div class="name">Last dinner in the Marais <span class="booked">book this one</span></div>
+        <div class="body">End close to home. Note that a good number of places on and around Rue des Rosiers close from Friday evening through Saturday — including L'As du Fallafel and Miznon — so plan a street or two over.</div>
+      </div>
+    </div>
+
+    <div class="drift">
+      <h4>Ways to fill the middle</h4>
+      <ul>
+        <li><b>Trocadéro,</b> straight across the bridge from the tower. It's the postcard angle and it takes ten minutes.</li>
+        <li><b>Rue Cler</b> for lunch — a pedestrian market street in the 7th, ten minutes from the tower, and about as pleasant as a tourist-adjacent street gets.</li>
+        <li><b>Montmartre in the late afternoon.</b> Métro to Abbesses. Sacré-Cœur steps at golden hour, but the real pleasure is the streets north and west of the basilica where nobody goes. Skip Place du Tertre.</li>
+        <li><b>Or drop the whole west side</b> and spend the afternoon on Heritage Days openings instead — the programme lists buildings that are shut the other 363 days of the year. Check paris.fr the week before and pick one near you.</li>
+        <li><b>Marché des Enfants Rouges,</b> ten minutes from the flat. Oldest covered market in Paris, open Saturday, and a good low-effort lunch if you come back early.</li>
+        <li><b>Sit in the Village Saint-Paul</b> courtyards, five minutes from your door — antique dealers around a set of linked cobbled yards that most visitors walk straight past.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SUNDAY ═════════════════════════════ -->
+<section id="sun">
+  <div class="wrap">
+    <div class="day-head">
+      <span class="day-num">20</span>
+      <span class="day-dow">Sunday</span>
+      <span class="day-gist">Coffee, then go</span>
+    </div>
+
+    <p>A 13:55 transatlantic departure means being at CDG by about 10:45, which means leaving the flat at 09:30. There's time for breakfast and nothing else, and that's fine.</p>
+
+    <div class="anchor">
+      <div class="time">08:00</div>
+      <div>
+        <div class="name">Breakfast and pack</div>
+        <div class="body">The boulangeries open early. Poilâne on Rue Debelleyme is ten minutes and worth the walk for the last croissant of the trip.</div>
+      </div>
+    </div>
+
+    <div class="anchor">
+      <div class="time">09:30</div>
+      <div>
+        <div class="name">Taxi to CDG</div>
+        <div class="body">Regulated flat fare to the Right Bank — book a G7 the night before rather than gambling on a Sunday-morning Uber. Forty to fifty minutes with no traffic. The RER B from Châtelet works too and is far cheaper, but it means dragging bags through a change at Châtelet, which is not a small station.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ EATING ═════════════════════════════ -->
+<section id="eat">
+  <div class="wrap">
+    <h2>Eating
+      <span class="sub">Nearly all of this is a ten-minute walk or less</span>
+    </h2>
+
+    <h3>Sit-down dinners</h3>
+    <div class="eats">
+      <div class="eat">
+        <div class="n">Chez Janou</div>
+        <div class="a">2 Rue Roger Verlomme · 11 min</div>
+        <div class="d">Provençal, loud, packed, and been that way for decades. Order the chocolate mousse — it arrives as an enormous communal bowl with a spoon and the instruction to help yourself. Book ahead or come early.</div>
+      </div>
+      <div class="eat">
+        <div class="n">Café des Musées</div>
+        <div class="a">49 Rue de Turenne · 9 min</div>
+        <div class="d">The neighbourhood bistro you want to have found yourself. Steak-frites, a good wine list, and no pretensions. Small, so reserve.</div>
+      </div>
+      <div class="eat">
+        <div class="n">Robert et Louise</div>
+        <div class="a">64 Rue Vieille du Temple · 7 min</div>
+        <div class="d">Meat cooked over a wood fire in a tiny room with communal tables. Not subtle and not trying to be. Book, or expect to wait.</div>
+      </div>
+      <div class="eat">
+        <div class="n">Le Petit Marché</div>
+        <div class="a">9 Rue de Béarn · 10 min</div>
+        <div class="d">French bistro with Thai seasoning running quietly underneath it. Reliably good, reliably busy, a good Saturday-night option.</div>
+      </div>
+      <div class="eat">
+        <div class="n">Breizh Café</div>
+        <div class="a">109 Rue Vieille du Temple · 8 min</div>
+        <div class="d">Buckwheat galettes and Breton cider in a bowl. Lighter than a full dinner and a good call the night of the jazz.</div>
+      </div>
+      <div class="eat">
+        <div class="n">Le Mary Celeste</div>
+        <div class="a">1 Rue Commines · 12 min</div>
+        <div class="d">Oysters, small plates and proper cocktails around a horseshoe bar. No reservations. Better as a late drink than a planned dinner.</div>
+      </div>
+    </div>
+
+    <h3>Quick, cheap and on your street</h3>
+    <div class="eats">
+      <div class="eat">
+        <div class="n">L'As du Fallafel</div>
+        <div class="a">34 Rue des Rosiers · 2 min</div>
+        <div class="d">The famous one, and it deserves it. Takeaway window queue moves faster than the dining room. Closed Friday evening and all Saturday.</div>
+      </div>
+      <div class="eat">
+        <div class="n">Miznon</div>
+        <div class="a">22 Rue des Écouffes · same street</div>
+        <div class="d">Israeli pita, chaotic, excellent — the roasted cauliflower is the thing. Also closed Saturday.</div>
+      </div>
+      <div class="eat">
+        <div class="n">Marché des Enfants Rouges</div>
+        <div class="a">39 Rue de Bretagne · 10 min</div>
+        <div class="d">Covered market from 1615 with a dozen food stalls. Chez Alain Miam Miam does the sandwich people queue twenty minutes for. Closed Mondays.</div>
+      </div>
+      <div class="eat">
+        <div class="n">Jacques Genin</div>
+        <div class="a">133 Rue de Turenne · 13 min</div>
+        <div class="d">Chocolates and caramels at the very top of the trade, plus a small salon where you can sit down with a Mont Blanc and a pot of chocolate.</div>
+      </div>
+      <div class="eat">
+        <div class="n">Berthillon</div>
+        <div class="a">Île Saint-Louis · 9 min</div>
+        <div class="d">The ice cream. Buy it from one of the cafés along Rue Saint-Louis-en-l'Île if the main shop has a line — they all serve it.</div>
+      </div>
+      <div class="eat">
+        <div class="n">Poilâne</div>
+        <div class="a">38 Rue Debelleyme · 10 min</div>
+        <div class="d">The sourdough loaf that made the name, plus punitions — small butter biscuits sold by weight. Good Sunday-morning stop on your way out.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ BASICS ═════════════════════════════ -->
+<section id="basics">
+  <div class="wrap">
+    <h2>Basics
+      <span class="sub">Small things that save an argument</span>
+    </h2>
+
+    <h3>Getting around</h3>
+    <p>Tap in with a contactless card or phone; there's no need for paper tickets or a Navigo unless you want one. Saint-Paul on line 1 is three minutes from the door, and line 1 alone gets you to the Louvre, Concorde, the Champs-Élysées and the Arc de Triomphe without changing. For the Eiffel Tower take line 1 to Charles de Gaulle–Étoile and change to line 6, which runs above ground across the Pont de Bir-Hakeim — a better arrival than coming up from underground.</p>
+
+    <h3>The Jewish quarter, on Saturdays</h3>
+    <p>Rue des Rosiers and the streets around it are the historic Pletzl, and a good number of shops and restaurants close from Friday evening until Saturday evening. It's your immediate neighbourhood, so it's worth knowing on Saturday when you're hungry. Everything a few streets west is open as normal.</p>
+
+    <h3>Sundays</h3>
+    <p>Most of Paris shuts on Sunday. The Marais is one of the few districts where shops stay open, which is a genuine perk of where you're staying — and slightly wasted on you, since you'll be at the airport. If you want anything from the neighbourhood, buy it Saturday.</p>
+
+    <h3>Dining rhythm</h3>
+    <p>Kitchens generally run 19:30 to 22:30 and a 20:00 table is normal, not late. Service is included in the price by law, so tipping is rounding up or leaving a few euros for something good — not a percentage. Tap water is free and correct to order: <em>une carafe d'eau</em>.</p>
+
+    <h3>Things worth pre-empting</h3>
+    <p>Download the Notre-Dame app now so the account exists when the reservation window opens on the 15th. Save your Louvre, Orsay, Sainte-Chapelle and Eiffel QR codes offline — mobile signal at the Île de la Cité entrance is unreliable, which is exactly where you'll need it first. And confirm which dock your cruise leaves from the day before, in writing.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="orn">Bon voyage</div>
+    <div class="fine">Print it, or keep it open on a phone</div>
+  </div>
+</footer>
+
+</body>
+</html>
